@@ -1,5 +1,6 @@
 import pygame
 
+
 class Player:
 
     def __init__(self, screen):
@@ -8,10 +9,16 @@ class Player:
         self.static_position = (100, 100)
         self.angle = 0
         self.speed = 10
+        self.step = 0
 
     def tiles(self):
-        tmp = pygame.image.load('resources/images/dude.png')
-        return pygame.transform.rotate(tmp, 360 - self.angle * 57.29)
+        tmp = [
+            pygame.image.load('resources/images/dude.png'),
+            pygame.image.load('resources/images/dude2.png'),
+            pygame.image.load('resources/images/dude.png'),
+            pygame.image.load('resources/images/dude2.png')
+        ]
+        return pygame.transform.rotate(tmp[self.step//6], 360 - self.angle * 57.29)
 
     def rotate(self, angle):
         self.angle = angle
@@ -36,7 +43,13 @@ class Player:
         self.weapon.add_bullet(
             [self.angle, self.static_position[0]+32, self.static_position[1]+32])
 
+    def move(self):
+        self.step += 1
+        if self.step >= 12:
+            self.step = 0
+
     def draw(self):
+        self.move()
         self.static_position = (self.position[0] - self.tiles().get_rect(
         ).width/2, self.position[1] - self.tiles().get_rect().height/2)
         self.screen.blit(self.tiles(), self.static_position)

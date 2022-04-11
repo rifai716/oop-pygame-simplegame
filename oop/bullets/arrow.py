@@ -13,7 +13,7 @@ class Arrow(Bullet):
 	def shoot_sound(self):
 		tmp = pygame.mixer.Sound("resources/audio/shoot.wav")
 		tmp.set_volume(0.05)
-		return tmp
+		tmp.play()
 
 	def hit_enemy_sound(self):
 		pass
