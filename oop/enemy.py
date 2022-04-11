@@ -1,14 +1,20 @@
 import pygame
 
 class Enemy:
-  def __init__(self):
-    self.position = [0, 0]
-    self.speed = 2
+  def __init__(self, screen, position=[0, 0], speed=2):
+    self.screen = screen
+    self.position = position
+    self.speed = speed
     
-  def mask(self):
-    return pygame.image.load('resources/images/badguy.png')
+  def tiles(self):
+    pass
     
   def hit_sound(self):
-    tmp = pygame.mixer.Sound("resources/audio/enemy.wav")
-    tmp.set_volume(0.05)
-    return tmp
+    pass
+  
+  def collation_with_bullet(self):
+    pass
+  
+  def collation_with_player(self):
+    pass
+  

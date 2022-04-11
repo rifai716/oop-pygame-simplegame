@@ -1,5 +1,5 @@
 import pygame
-from oop.bullet import Arrow
+from oop.bullets.arrow import Arrow
 from oop.control import GameController
 from oop.scene import Scene
 from oop.level.level1 import Level1
