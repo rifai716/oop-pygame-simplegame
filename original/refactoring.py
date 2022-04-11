@@ -140,14 +140,14 @@ while(running):
         index += 1
 
     # gambar musuh ke layar
-    for enemy in enemies:
-        rr = randint(1, 3)
-        if rr == 1:
-            screen.blit(enemy_img, enemy)
-        elif rr == 2:
-            screen.blit(enemy_img1, enemy)
-        else:
-            screen.blit(enemy_img2, enemy)
+    # for enemy in enemies:
+    #     rr = randint(1, 3)
+    #     if rr == 1:
+    #         screen.blit(enemy_img, enemy)
+    #     elif rr == 2:
+    #         screen.blit(enemy_img1, enemy)
+    #     else:
+    #         screen.blit(enemy_img2, enemy)
         # print('TOTAL MUSUK ', len(enemies))
         # loop += 1
         # if loop % 2 == 0:
