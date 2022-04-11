@@ -1,17 +1,24 @@
+from random import randint
+
+from oop.enemy import Enemy
+
+
 class Level:
     def __init__(self, screen, resolution):
         self.screen = screen
         self.resolution = resolution
+        self.castle = None
         self.enemies = []
         self.weapons = []
         self.background_sound()
-        self.setup_castle()
-        
-    def setup_castle(self):
+        self.setup()
+        self.enemy_timer = 0
+
+    def setup(self):
         pass
 
-    def add_enemy(self, cordinate):
-        self.enemies.append(cordinate)
+    def add_enemy(self, enemy):
+        self.enemies.append(enemy)
 
     def add_weapon(self, cordinate):
         self.weapons.append(cordinate)
@@ -23,4 +30,19 @@ class Level:
         pass
 
     def draw(self):
-        pass
+        for x in range(int(self.resolution[0]/self.tiles().get_width()+1)):
+            for y in range(int(self.resolution[1]/self.tiles().get_height()+1)):
+                self.screen.blit(
+                    self.tiles(), (x*self.tiles().get_width(), y*self.tiles().get_height()))
+
+        self.castle.draw()
+        
+        self.enemy_timer -= 1
+        if self.enemy_timer <= 0:
+            self.add_enemy(self.enemy[randint(0, len(self.enemy)-1)](
+                self.screen, self.resolution, [self.resolution[0], randint(50, self.resolution[1]-32)]))
+            self.enemy_timer = randint(1, 100)
+
+        for enemy in self.enemies:
+            print('Total enemy:', len(self.enemies), '---', enemy.position)
+            enemy.draw()

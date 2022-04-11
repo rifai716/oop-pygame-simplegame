@@ -1,3 +1,5 @@
 oop/__pycache__
-oop/level/__pycache__
-oop/level/castle/__pycache__
+oop/levels/__pycache__
+oop/levels/castle/__pycache__
+oop/enemies/__pycache__
+oop/bullets/__pycache__

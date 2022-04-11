@@ -3,8 +3,10 @@ from oop.enemy import Enemy
 
 class Mouse(Enemy):
   
-  def __init__(self):
-    Enemy.__init__(self)
+  speed = 5
+  
+  def setup(self):
+    self.speed = Mouse.speed
   
   def tiles(self):
     return pygame.image.load('resources/images/badguy.png')
