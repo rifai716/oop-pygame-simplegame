@@ -20,7 +20,7 @@ scene.setup_level(
   Level5,
 )
 
-player = Player(scene.screen)
+player = Player(scene)
 player.set_weapon(Arrow())
 game_controller = GameController(player)
 

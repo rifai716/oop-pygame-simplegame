@@ -45,7 +45,6 @@ class Level:
 
         index = 0
         for enemy in self.enemies:
-            # print('Total enemy:', len(self.enemies), '---', enemy.position)
             enemy.collation_with_castle(self.enemies)
             index += 1
         
