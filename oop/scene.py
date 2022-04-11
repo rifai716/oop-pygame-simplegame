@@ -4,7 +4,8 @@ import pygame
 class Scene:
     def __init__(self, resolution):
         self.resolution = resolution  # (width, height)
-        self.screen = pygame.display.set_mode(self.resolution)  # (screen pygame)
+        self.screen = pygame.display.set_mode(
+            self.resolution)  # (screen pygame)
         self.level = 1
         self.levels = []
 
@@ -23,7 +24,7 @@ class Scene:
 
     def prev_level(self):
         self.level -= 1
-        
+
     def fill(self):
         self.screen.fill(0)
         self.levels[self.level-1].draw()

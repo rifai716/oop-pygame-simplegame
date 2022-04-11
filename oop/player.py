@@ -3,8 +3,9 @@ import pygame
 
 class Player:
 
-    def __init__(self, screen):
-        self.screen = screen
+    def __init__(self, scene):
+        self.scene = scene
+        self.screen = scene.screen
         self.position = [100, 100]
         self.static_position = (100, 100)
         self.angle = 0
