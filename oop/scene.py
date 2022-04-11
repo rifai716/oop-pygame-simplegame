@@ -24,7 +24,12 @@ class Scene:
 
     def prev_level(self):
         self.level -= 1
+        
+    def interaction(self, player):
+        self.player = player
+        self.levels[self.level-1].play(self.player)
 
     def fill(self):
         self.screen.fill(0)
         self.levels[self.level-1].draw()
+        self.player.draw()

@@ -3,7 +3,7 @@ import pygame
 
 class Player:
 
-    def __init__(self, scene):
+    def __init__(self, scene, weapon):
         self.scene = scene
         self.screen = scene.screen
         self.position = [100, 100]
@@ -11,6 +11,8 @@ class Player:
         self.angle = 0
         self.speed = 10
         self.step = 0
+        self.set_weapon(weapon)
+        self.scene.interaction(self)
 
     def tiles(self):
         tmp = [
@@ -55,3 +57,4 @@ class Player:
         ).width/2, self.position[1] - self.tiles().get_rect().height/2)
         self.screen.blit(self.tiles(), self.static_position)
         self.weapon.draw()
+        # pygame.display.update() 

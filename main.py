@@ -20,8 +20,7 @@ scene.setup_level(
   Level5,
 )
 
-player = Player(scene)
-player.set_weapon(Arrow())
+player = Player(scene, Arrow())
 game_controller = GameController(player)
 
 running = True
@@ -30,5 +29,4 @@ while(running):
   scene.fill()
   game_controller.keyboard_event()
   game_controller.mouse_position_event()
-  player.draw()
   pygame.display.flip()

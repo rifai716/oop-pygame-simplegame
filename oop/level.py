@@ -28,6 +28,9 @@ class Level:
 
     def tiles(self):
         pass
+    
+    def play(self, player):
+        self.player = player
 
     def draw(self):
         for x in range(int(self.resolution[0]/self.tiles().get_width()+1)):
@@ -51,4 +54,4 @@ class Level:
         for enemy in self.enemies:
             enemy.draw()
         
-        
+        print(len(self.player.weapon.bullets))        
