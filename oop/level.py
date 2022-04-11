@@ -43,6 +43,11 @@ class Level:
                 self.screen, self.resolution, [self.resolution[0], randint(50, self.resolution[1]-32)]))
             self.enemy_timer = randint(1, 100)
 
+        index = 0
         for enemy in self.enemies:
-            print('Total enemy:', len(self.enemies), '---', enemy.position)
+            # print('Total enemy:', len(self.enemies), '---', enemy.position)
+            enemy.collation_with_castle(self.enemies)
+            index += 1
+        
+        for enemy in self.enemies:
             enemy.draw()

@@ -2,7 +2,7 @@ import pygame
 from oop.bullet import Bullet
 
 class Arrow(Bullet):
-	max_bullet = 5
+	max_bullet = 5000000000
 
 	def __init__(self):
 		Bullet.__init__(self, Arrow.max_bullet)

@@ -9,9 +9,14 @@ class Mouse(Enemy):
     self.speed = Mouse.speed
   
   def tiles(self):
-    return pygame.image.load('resources/images/badguy.png')
+    return [
+      pygame.image.load('resources/images/badguy.png'),
+      pygame.image.load('resources/images/badguy2.png'),
+      pygame.image.load('resources/images/badguy3.png'),
+      pygame.image.load('resources/images/badguy4.png'),
+    ]
   
   def hit_sound(self):
     tmp = pygame.mixer.Sound("resources/audio/enemy.wav")
     tmp.set_volume(0.05)
-    return tmp
+    tmp.play()
