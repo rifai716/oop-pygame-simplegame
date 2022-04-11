@@ -1,4 +1,5 @@
 import pygame
+from oop.enemies.scorpion import Scorpion
 from oop.level import Level
 from oop.levels.castle.castle1 import Castle
 from oop.enemies.mouse import Mouse
@@ -9,7 +10,7 @@ class Level1(Level):
 
     def setup(self):
         self.castle = Castle(self.screen)
-        self.enemy = [Mouse]
+        self.enemy = [Mouse, Mouse]
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
