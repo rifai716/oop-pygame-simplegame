@@ -15,9 +15,8 @@ class Scene:
         return pygame.image.load("resources/images/gameover.png")
 
     def setup_level(self, *args):
-        for i in args:
-            i.setup(self.screen, self.resolution)
-            self.levels.append(i)
+        for level in args:
+            self.levels.append(level(self.screen, self.resolution))
 
     def next_level(self):
         self.level += 1

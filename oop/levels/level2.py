@@ -1,17 +1,13 @@
 import pygame
-from oop.level.castle.castle1 import Castle
+from oop.level import Level
+from oop.levels.castle.castle1 import Castle
 
 
-class Level1():
-    ''' Level 1 - berlatar belakang rerumputan '''
+class Level2(Level):
+    ''' Level 2 - berlatar belakang rerumputan '''
 
-    def setup(self, screen, resolution):
-        print(resolution)
-        self.screen = screen
-        self.resolution = resolution
+    def setup_castle(self):
         self.castle = Castle(self.screen)
-        self.background_sound()
-    
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
@@ -22,11 +18,10 @@ class Level1():
     def tiles(self):
         return pygame.image.load('resources/images/grass.png')
 
-    def draw(self):        
+    def draw(self):
         for x in range(int(self.resolution[0]/self.tiles().get_width()+1)):
             for y in range(int(self.resolution[1]/self.tiles().get_height()+1)):
                 self.screen.blit(
                     self.tiles(), (x*self.tiles().get_width(), y*self.tiles().get_height()))
-        
+
         self.castle.draw()
-    
