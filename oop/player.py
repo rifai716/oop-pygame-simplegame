@@ -18,8 +18,6 @@ class Player:
         tmp = [
             pygame.image.load('resources/images/dude.png'),
             pygame.image.load('resources/images/dude2.png'),
-            pygame.image.load('resources/images/dude.png'),
-            pygame.image.load('resources/images/dude2.png')
         ]
         return pygame.transform.rotate(tmp[self.step//6], 360 - self.angle * 57.29)
 
@@ -50,11 +48,11 @@ class Player:
         self.step += 1
         if self.step >= 12:
             self.step = 0
+        self.static_position = (self.position[0] - self.tiles().get_rect(
+        ).width/2, self.position[1] - self.tiles().get_rect().height/2)
 
     def draw(self):
         self.move()
-        self.static_position = (self.position[0] - self.tiles().get_rect(
-        ).width/2, self.position[1] - self.tiles().get_rect().height/2)
         self.screen.blit(self.tiles(), self.static_position)
         self.weapon.draw()
         # pygame.display.update() 
