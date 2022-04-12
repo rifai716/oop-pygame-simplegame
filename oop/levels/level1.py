@@ -10,7 +10,7 @@ class Level1(Level):
 
     def setup(self):
         self.castle = Castle(self.screen)
-        self.enemy = [Mouse, Mouse]
+        self.enemy = [Mouse, Scorpion]
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
