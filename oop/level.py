@@ -48,10 +48,10 @@ class Level:
 
         index = 0
         for enemy in self.enemies:
-            enemy.collation_with_castle(self.enemies)
+            enemy.collision_with_castle(self.enemies)
             index += 1
         
         for enemy in self.enemies:
             enemy.draw()
         
-        print(len(self.player.weapon.bullets))        
+        print('Total bulet yang keluar : ', len(self.player.weapon.bullets))        

@@ -19,13 +19,13 @@ class Enemy:
   def hit_sound(self):
     pass
   
-  def collation_with_bullet(self, enemies, bullet):
+  def collision_with_bullet(self, enemies, bullet):
     pass
   
-  def collation_with_player(self, enemies, player):
+  def collision_with_player(self, enemies, player):
     pass
   
-  def collation_with_castle(self, enemies):
+  def collision_with_castle(self, enemies):
     if self.position[0] <= 64:
       self.hit_sound()
       enemies.remove(self)
