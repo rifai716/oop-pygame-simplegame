@@ -1,7 +1,5 @@
 from random import randint
-
-from oop.enemy import Enemy
-
+import pygame
 
 class Level:
     def __init__(self, screen, resolution):
@@ -54,4 +52,8 @@ class Level:
         for enemy in self.enemies:
             enemy.draw()
         
-        print('Total bulet yang keluar : ', len(self.player.weapon.bullets))        
+        # print('Total bulet yang keluar : ', len(self.player.weapon.bullets))
+        for b in self.player.weapon.bullets:
+          bullet_rect = pygame.Rect(b.get_rect())
+          bullet_rect.left = bullet[1]
+          bullet_rect.top = bullet[2]        
