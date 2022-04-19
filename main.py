@@ -12,6 +12,9 @@ from oop.player import Player
 
 pygame.init()
 
+clock = pygame.time.Clock()
+
+
 scene = Scene((640, 480))
 scene.setup_level(
   Level1,
@@ -32,4 +35,5 @@ while(running):
   scene.fill()
   game_controller.keyboard_event()
   game_controller.mouse_position_event()
+  clock.tick(60)
   pygame.display.flip()
