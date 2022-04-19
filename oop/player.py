@@ -63,6 +63,18 @@ class Player:
         if self.step >= 12:
             self.step = 0
         
+        if self.rect.midbottom[0] > self.scene.resolution[0]:
+          self.position[0] = 0
+        
+        if self.rect.midbottom[1] > self.scene.resolution[1]:
+          self.position[1] = 0
+          
+        if self.rect.midbottom[0] < 0:
+          self.position[0] = self.scene.resolution[0]
+        
+        if self.rect.midbottom[1] < 0 :
+          self.position[1] = self.scene.resolution[1]
+        
     def draw(self):
         self.screen.blit(self.tiles(), self.rect)
         self.weapon.draw()
