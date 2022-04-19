@@ -11,6 +11,7 @@ class Level2(Level):
     def setup(self):
         self.castle = Castle(self.screen)
         self.enemy = [Mouse, Scorpion]
+        self.sprites = self.get_sprites()
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
@@ -19,5 +20,7 @@ class Level2(Level):
         pygame.mixer.music.set_volume(volume)
 
     def tiles(self):
+        return self.sprites
+    
+    def get_sprites(self):
         return pygame.image.load('resources/images/pasir.jpg')
-        

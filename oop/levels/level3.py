@@ -8,6 +8,7 @@ class Level3(Level):
 
     def setup_castle(self):
         self.castle = Castle(self.screen)
+        self.sprites = self.get_sprites()
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
@@ -16,6 +17,9 @@ class Level3(Level):
         pygame.mixer.music.set_volume(volume)
 
     def tiles(self):
+        return self.sprites
+      
+    def get_sprites(self):
         return pygame.image.load('resources/images/grass.png')
 
     def draw(self):

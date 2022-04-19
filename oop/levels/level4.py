@@ -4,10 +4,11 @@ from oop.levels.castle.castle1 import Castle
 
 
 class Level4(Level):
-    ''' Level 4 - berlatar belakang rerumputan '''
+    ''' Level 3 - berlatar belakang rerumputan '''
 
     def setup_castle(self):
         self.castle = Castle(self.screen)
+        self.sprites = self.get_sprites()
 
     def background_sound(self, volume=0.25):
         pygame.mixer.init()
@@ -16,6 +17,9 @@ class Level4(Level):
         pygame.mixer.music.set_volume(volume)
 
     def tiles(self):
+        return self.sprites
+      
+    def get_sprites(self):
         return pygame.image.load('resources/images/grass.png')
 
     def draw(self):

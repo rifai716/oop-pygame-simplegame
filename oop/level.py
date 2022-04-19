@@ -47,13 +47,19 @@ class Level:
         index = 0
         for enemy in self.enemies:
             enemy.collision_with_castle(self.enemies)
+            for b in self.player.weapon.bullets:
+              bullet_rect = pygame.Rect(self.player.weapon.tiles().get_rect())
+              bullet_rect.left = b[1]
+              bullet_rect.top = b[2]
+              #print(bullet_rect.top)
+              #print(pygame.Rect(enemy.tiles()[0].get_rect()).colliderect(bullet_rect))
+              if enemy.tiles()[0].get_rect().colliderect(bullet_rect):
+                print('menyerang', index)                
+
             index += 1
         
         for enemy in self.enemies:
             enemy.draw()
         
         # print('Total bulet yang keluar : ', len(self.player.weapon.bullets))
-        for b in self.player.weapon.bullets:
-          bullet_rect = pygame.Rect(b.get_rect())
-          bullet_rect.left = bullet[1]
-          bullet_rect.top = bullet[2]        
+                
