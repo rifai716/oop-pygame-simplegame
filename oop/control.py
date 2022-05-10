@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import math
+import sys
 
 
 class GameController:
@@ -18,7 +19,7 @@ class GameController:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit(0)
+                sys.exit(0)
             if event.type == pygame.KEYDOWN:
                 if event.key == K_w:
                     self.keys["top"] = True
